@@ -15,6 +15,9 @@ build
 
 # misc
 .DS_Store
+.idea
+.vscode
+.vs_code
 *.pem
 
 # debug
