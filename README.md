@@ -1,6 +1,6 @@
-<center>
-    <img src='assets/logo-1.png' width='200px'>
-</center>
+<p align="center">
+    <img src="./assets/logo-1.png" width="200px" />
+</p>
 
 # Previous project
 Some more data and start of development could be find here: https://github.com/marckraw/travel-journal/tree/master
