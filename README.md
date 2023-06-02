@@ -1,3 +1,9 @@
+# Previous project
+Some more data and start of development could be find here: https://github.com/marckraw/travel-journal/tree/master
+
+This is the old repo of the project named travel-jouranl.
+
+
 # Turborepo starter
 
 This is an official starter Turborepo.
