@@ -1,5 +1,6 @@
 import {Poppins} from 'next/font/google'
 import React from "react";
+import { Metadata } from 'next'
 import {Header} from "../components/Header/Header";
 
 const poppins = Poppins({
@@ -7,7 +8,8 @@ const poppins = Poppins({
     subsets: ['latin-ext']
 })
 
-export const metadata = {
+
+export const metadata: Metadata = {
     title: "Hike IT!",
     description: "This is hike it app"
 }
