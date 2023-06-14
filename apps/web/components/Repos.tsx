@@ -1,6 +1,8 @@
+// eslint-disable-next-line turbo/no-undeclared-env-vars
+const BASE_URL = process.env.BASE_URL
 
 const fetchRepos = async () => {
-    const response = await fetch('api/repos')
+    const response = await fetch(`${BASE_URL}/api/repos`)
     const repos = await response.json()
     return repos
 }
