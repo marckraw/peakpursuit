@@ -1,7 +1,7 @@
 import {Poppins} from 'next/font/google'
 import React from "react";
 import { Metadata } from 'next'
-import {Header} from "../components/Header/Header";
+import {Header} from "@/src/components/Header/Header";
 
 const poppins = Poppins({
     weight: ['400', '700'],

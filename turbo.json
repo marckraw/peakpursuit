@@ -2,12 +2,28 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "globalDotEnv": [".env.local", ".env"],
-  "globalEnv": ["BASE_URL"],
+  "globalEnv": [
+    "BASE_URL",
+    "GITHUB_SECRET",
+    "GITHUB_ID",
+    "ADMIN_EMAIL",
+    "ADMIN_NAME",
+    "ADMIN_PROFILE_URL",
+    "AUTHORIZATION_SECRET"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "env": ["BASE_URL"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "env": [
+        "BASE_URL",
+        "GITHUB_SECRET",
+        "GITHUB_ID",
+        "ADMIN_EMAIL",
+        "ADMIN_NAME",
+        "ADMIN_PROFILE_URL",
+        "AUTHORIZATION_SECRET"
+      ],
+      "outputs": ["dist/**",".next/**", "!.next/cache/**"]
     },
     "lint": {},
     "dev": {
