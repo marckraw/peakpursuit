@@ -1,0 +1,27 @@
+###
+GET https://localhost:3000/api/db/migration
+
+
+###
+GET https://localhost:3000/api/db/seed
+
+
+###
+GET http://localhost:8080/v1/user
+
+
+### GET Messages
+GET http://localhost:8080/v1/messages
+
+
+### Create a new message
+POST http://localhost:8080/v1/messages
+Content-Type: application/json
+
+{
+  "content": "Hello world!"
+}
+
+
+### GET specific message
+GET http://localhost:8080/v1/messages/15
