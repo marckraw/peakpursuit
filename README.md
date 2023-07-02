@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/logo-1.png" width="200px" />
+    <img src="apps/web/public/assets/logo-1.png" width="200px" />
 </p>
 
 # Previous project
