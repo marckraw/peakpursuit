@@ -4,9 +4,13 @@
   --background-color: white;
 }
 
-body {
-  background-color: var(--background-color);
+* {
   box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;

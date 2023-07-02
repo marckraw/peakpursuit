@@ -7,10 +7,12 @@
   align-items: center;
 
   > div {
+    padding: 0px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 528px;
+    max-width: 528px;
+    width: 100%;
   }
 }
