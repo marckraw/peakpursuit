@@ -1,0 +1,11 @@
+@use "sizes.scss";
+
+:root {
+  --spacing-xxs: var(--size-xxs);
+  --spacing-xs: var(--size-xs);
+  --spacing-s: var(--size-s);
+  --spacing-m: var(--size-m);
+  --spacing-l: var(--size-l);
+  --spacing-xl: var(--size-xl);
+  --spacing-xxl: var(--size-xxl);
+}
