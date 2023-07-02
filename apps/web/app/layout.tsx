@@ -5,10 +5,8 @@ import { Metadata } from 'next'
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/src/lib/auth";
 import {MainWrapper} from "@/src/wrappers/main-wrapper";
-import {LoginButton} from "@/src/components/LoginButton";
-import styles from '../src/styles/global-layout.module.scss'
-import {BrandHighlight} from "@/src/components/BrandHighlight";
 import {Teaser} from "@/src/components/Teaser/Teaser";
+import clsx from "clsx";
 
 const poppins = Poppins({
     weight: ['400', '700'],
@@ -32,7 +30,7 @@ export default async function RootLayout({
     if(!session) {
         return (
             <html lang="en">
-            <body className={poppins.className}>
+            <body className={clsx(poppins.className)}>
                 <Teaser />
             </body>
             </html>
@@ -41,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={poppins.className}>
+    <body className={clsx(poppins.className)}>
       <MainWrapper>
           {children}
       </MainWrapper>

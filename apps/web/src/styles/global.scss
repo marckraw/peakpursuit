@@ -1,5 +1,21 @@
+:root {
+  --text-color: black;
+  --accent-color: darkorange;
+  --background-color: white;
+}
+
 body {
+  background-color: var(--background-color);
   box-sizing: border-box;
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: white;
+    --accent-color: darkorange;
+    --background-color: black;
+  }
 }
