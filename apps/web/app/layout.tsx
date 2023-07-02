@@ -16,8 +16,8 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-    title: "Hike IT!",
-    description: "This is hike it app"
+    title: "Peak Pursuit!",
+    description: "This is peak pursuit web app"
 }
 
 export default async function RootLayout({
