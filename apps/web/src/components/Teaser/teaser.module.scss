@@ -1,6 +1,7 @@
 .teaser {
   width: 100%;
-  height: calc(100vh - 200px);
+  height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
