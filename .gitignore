@@ -18,6 +18,8 @@ build
 .idea
 .vscode
 .vs_code
+*.crt
+*.key
 *.pem
 
 # debug

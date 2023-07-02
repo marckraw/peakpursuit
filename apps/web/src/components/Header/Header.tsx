@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {LogoutButton} from "@/src/components/LogoutButton";
 
 const Header = () => {
     return (
@@ -12,6 +13,9 @@ const Header = () => {
                         <li><Link href={'/about/me'}>About Me</Link></li>
                         <li><Link href={'/code/repos'}>Repos</Link></li>
                     </ul>
+                </div>
+                <div>
+                    <LogoutButton />
                 </div>
             </div>
         </header>
