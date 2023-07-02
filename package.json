@@ -9,13 +9,13 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.10.3",
-    "eslint": "^8.43.0",
+    "@turbo/gen": "^1.10.7",
+    "eslint": "^8.44.0",
     "eslint-config-custom": "*",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.1",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.5.1",
-    "turbo": "^1.10.3"
+    "turbo": "^1.10.7"
   },
   "name": "hikeit",
   "packageManager": "yarn@1.22.19",
