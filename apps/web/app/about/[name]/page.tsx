@@ -1,4 +1,4 @@
-import {Repos} from "../../../components/Repos";
+import {Repos} from "@/src/components/Repos";
 import React from "react";
 
 const CustomNamePage = (props) => {

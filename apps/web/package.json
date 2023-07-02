@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "create:https": "mkcert create-ca && mkcert create-cert",
+    "proxy:https": "local-ssl-proxy --cert ./cert.crt --key ./cert.key --source 3000 --target 3001",
+    "clean:dev": "rimraf .next && yarn dev",
+    "dev": "concurrently \"yarn proxy:https\" \"next dev -p 3001\" \"wait-on https-get://localhost:3000 -i 1000\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "date-fns": "^2.30.0",
     "next": "^13.4.7",
     "next-auth": "^4.22.1",
     "react": "^18.2.0",
@@ -20,12 +24,17 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "concurrently": "^8.2.0",
     "eslint-config-custom": "*",
+    "local-ssl-proxy": "^2.0.5",
+    "mkcert": "^1.5.1",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
     "sass": "^1.63.6",
     "tailwindcss": "^3.3.2",
     "tsconfig": "*",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "wait-on": "^7.0.1"
   }
 }
