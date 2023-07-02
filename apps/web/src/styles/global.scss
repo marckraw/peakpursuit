@@ -1,5 +1,30 @@
-body {
+@use "spacing.scss";
+@use "sizes.scss";
+
+:root {
+  --text-color: black;
+  --accent-color: darkorange;
+  --background-color: white;
+}
+
+
+* {
   box-sizing: border-box;
+}
+
+body {
+  font-size: var(--size-m);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+    --text-color: white;
+    --accent-color: darkorange;
+    --background-color: black;
+  }
 }
