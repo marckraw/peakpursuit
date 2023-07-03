@@ -3,6 +3,9 @@
   "globalDependencies": ["**/.env.*local"],
   "globalDotEnv": [".env.local", ".env"],
   "globalEnv": [
+    "DATABASE_URL",
+    "POSTGRES_URL",
+    "DB_CONNECTION_STRING",
     "BASE_URL",
     "GITHUB_SECRET",
     "GITHUB_ID",
@@ -15,6 +18,9 @@
     "build": {
       "dependsOn": ["^build"],
       "env": [
+        "DATABASE_URL",
+        "POSTGRES_URL",
+        "DB_CONNECTION_STRING",
         "BASE_URL",
         "GITHUB_SECRET",
         "GITHUB_ID",
