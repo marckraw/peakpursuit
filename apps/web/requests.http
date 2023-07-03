@@ -24,4 +24,4 @@ Content-Type: application/json
 
 
 ### GET specific message
-GET http://localhost:8080/v1/messages/15
+GET http://localhost:8080/v1/messages/651
