@@ -31,6 +31,23 @@ Content-Type: application/json
   "password": "12345678"
 }
 
+### DELETE user by id
+DELETE http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
+
+### PATCH user by id
+PATCH http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
+Content-Type: application/json
+
+{
+  "email": "marckraw@icloud.com"
+}
+
+### GET user by id
+GET http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
+
+### GET find all users with email
+GET http://localhost:8080/v1/auth?email=marckraw@icloud.com
+
 
 ### GET specific message
 GET http://localhost:8080/v1/messages/651

@@ -1,7 +1,22 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Query,
+  Param,
+  Delete,
+  NotFoundException,
+  UseInterceptors,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { Serialize } from '../interceptors/serialize.interceptor';
+import { UserDto } from './dto/user.dto';
 
+@Serialize(UserDto)
 @Controller('auth')
 export class UserController {
   constructor(private userService: UserService) {}
@@ -12,8 +27,37 @@ export class UserController {
     this.userService.create(email, password);
   }
 
-  @Get('')
-  getAllUsers() {
-    return this.userService.findAll();
+  @Patch('/:id')
+  updateUser(@Param('id') id: string, @Body() body: UpdateUserDto) {
+    const { email, password } = body;
+
+    return this.userService.update(id, { email, password });
+  }
+
+  @Get('/:id')
+  async findUser(@Param('id') id: string) {
+    console.log('Handler is running');
+    const user = await this.userService.findOne(id);
+
+    console.log('This is user found: ');
+    console.log(user);
+
+    if (!user) {
+      throw new NotFoundException('user not found');
+    }
+
+    return user;
+  }
+
+  @Get()
+  findAllUsers(@Query('email') email: string) {
+    console.log('passed email: ');
+    console.log(email);
+    return this.userService.find(email);
+  }
+
+  @Delete('/:id')
+  removeUser(@Param('id') id: string) {
+    return this.userService.remove(id);
   }
 }
