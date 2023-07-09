@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { User } from '../auth/user/user.entity';
+import { User } from '../user/user.entity';
 
 @Entity()
 export class Picture extends BaseEntity {
@@ -33,7 +33,7 @@ export class Picture extends BaseEntity {
   base64?: string;
 
   // Relations
-  @ManyToOne(() => User, (user) => user.pictures)
-  user: User;
+  // @ManyToOne(() => User, (user) => user.pictures)
+  // user: User;
   // tags: Tag['_id'][]; // Link to Tags in db (this is just sketch of how this things will relate to each other)
 }

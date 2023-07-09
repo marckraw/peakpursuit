@@ -23,7 +23,7 @@ async function bootstrap() {
   });
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // strip out, stuff that are not defined in our DTO
+      whitelist: true, // strip out, stuff that are not defined in our DTO (so it will not get into backend)
     }),
   );
 

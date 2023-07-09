@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
 const GlobalErrorPage = ({
-                                        error,
-                                        reset,
-                                    }: {
-    error: Error
-    reset: () => void
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
 }) => {
-    return (
-        <html>
-        <body>
+  return (
+    <html>
+      <body>
         <h2>Something went wrong!</h2>
         <button onClick={() => reset()}>Try again</button>
-        </body>
-        </html>
-    )
-}
+      </body>
+    </html>
+  );
+};
 
-export default GlobalErrorPage
+export default GlobalErrorPage;

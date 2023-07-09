@@ -22,6 +22,15 @@ Content-Type: application/json
   "content": "Hello world!"
 }
 
+### Sign up
+POST http://localhost:8080/v1/auth/signup
+Content-Type: application/json
+
+{
+  "email": "marckraw@icloud.com",
+  "password": "12345678"
+}
+
 
 ### GET specific message
 GET http://localhost:8080/v1/messages/651

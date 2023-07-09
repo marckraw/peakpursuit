@@ -1,11 +1,11 @@
-import {Spinner} from "@/src/components/Spinner/Spinner";
+import { Spinner } from "@/src/components/Spinner/Spinner";
 
 const LoadingPage = () => {
-    return (
-        <div>
-            <Spinner />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Spinner />
+    </div>
+  );
+};
 
-export default LoadingPage
+export default LoadingPage;
