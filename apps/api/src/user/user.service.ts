@@ -15,15 +15,33 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  findAll(): Promise<User[]> {
+  findOne(id: string) {
+    return this.userRepository.findOneBy({ id }); // returns single result matching criteria
+  }
+
+  find(email: string) {
+    return this.userRepository.find({ where: { email } }); // returns array of result matching criteria
+  }
+
+  findAll() {
     return this.userRepository.find();
   }
 
-  findOne(id: string): Promise<User> {
-    return this.userRepository.findOneBy({ id });
+  async update(id: string, attrs: Partial<User>) {
+    const user = await this.findOne(id);
+
+    if (!user) {
+      throw new Error('user not found');
+    }
+
+    const newUser = { ...user, ...attrs };
+
+    return this.userRepository.save(newUser);
   }
 
-  async remove(id: string): Promise<void> {
-    await this.userRepository.delete(id);
+  async remove(id: string) {
+    const user = await this.findOne(id);
+
+    await this.userRepository.remove(user);
   }
 }

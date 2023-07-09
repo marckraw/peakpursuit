@@ -1,23 +1,11 @@
 import {
-  BaseEntity,
+  AfterInsert,
+  AfterRemove,
+  AfterUpdate,
   Column,
-  CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
 } from 'typeorm';
-// import { Picture } from '../../picture/picture.entity';
-
-// export abstract class EntityBoilerplate extends BaseEntity {
-//   @PrimaryGeneratedColumn('uuid')
-//   id: string;
-//
-//   @CreateDateColumn()
-//   createdAt: Date;
-//
-//   @UpdateDateColumn()
-//   updatedAt: Date;
-// }
 
 @Entity()
 export class User {
@@ -30,17 +18,18 @@ export class User {
   @Column()
   password: string;
 
-  // @OneToMany((type) => Picture, (picture) => picture.user)
-  // pictures: Picture[];
+  @AfterInsert()
+  logInsert() {
+    console.log('Inserted User with id', this.id, ' and email ', this.email);
+  }
 
-  /*
-   *
-   * relations
-   *
-   * */
-  // @ManyToOne((type) => Category, (category) => category.children)
-  // parent: Category
-  //
-  // @OneToMany((type) => Category, (category) => category.parent)
-  // children: Category[]
+  @AfterUpdate()
+  logUpdate() {
+    console.log('Updated User with id', this.id, ' and email ', this.email);
+  }
+
+  @AfterRemove()
+  logRemove() {
+    console.log('Removed User with id', this.id, ' and email ', this.email);
+  }
 }
