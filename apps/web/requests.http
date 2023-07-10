@@ -9,9 +9,21 @@ GET https://localhost:3000/api/db/seed
 ###
 GET http://localhost:8080/v1/user
 
+###
+GET http://localhost:8080/v1/auth/me
+
+###
+GET http://localhost:8080/v1/auth/signout
+
 
 ### GET Messages
 GET http://localhost:8080/v1/messages
+
+### GET set Color
+GET http://localhost:8080/v1/auth/colors/orange
+
+### GET get Color
+GET http://localhost:8080/v1/auth/colors
 
 
 ### Create a new message
@@ -27,7 +39,16 @@ POST http://localhost:8080/v1/auth/signup
 Content-Type: application/json
 
 {
-  "email": "marckraw@icloud.com",
+  "email": "revanello@gmail.com",
+  "password": "12345678"
+}
+
+### Sign In
+POST http://localhost:8080/v1/auth/signin
+Content-Type: application/json
+
+{
+  "email": "revanello@gmail.com",
   "password": "12345678"
 }
 

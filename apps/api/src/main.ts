@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const cookieSession = require('cookie-session');
 
 const corsWhitelist = [
   'http://localhost:3000',
@@ -16,6 +18,12 @@ const corsOptions = {
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(
+    cookieSession({
+      name: 'session',
+      keys: ['key1', 'key2'],
+    }),
+  );
   app.enableCors(corsOptions);
   app.enableVersioning({
     type: VersioningType.URI,
