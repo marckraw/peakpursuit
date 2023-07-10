@@ -9,9 +9,18 @@ GET https://localhost:3000/api/db/seed
 ###
 GET http://localhost:8080/v1/user
 
+###
+GET http://localhost:8080/v1/auth/me
+
 
 ### GET Messages
 GET http://localhost:8080/v1/messages
+
+### GET set Color
+GET http://localhost:8080/v1/auth/colors/orange
+
+### GET get Color
+GET http://localhost:8080/v1/auth/colors
 
 
 ### Create a new message
