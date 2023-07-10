@@ -3,6 +3,7 @@
 </p>
 
 # Previous project
+
 Some more data and start of development could be find here: https://github.com/marckraw/travel-journal/tree/master
 
 This is the old repo of the project named travel-jouranl.
@@ -22,6 +23,7 @@ This Turborepo includes the following packages/apps:
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Stack
+
 - `Next.js 13+` - Server Components and all the other goodies
 - `Next.js API Routes` - for the backend
 - `PostgreSQL` - for the database
