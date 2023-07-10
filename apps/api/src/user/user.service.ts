@@ -16,6 +16,10 @@ export class UserService {
   }
 
   findOne(id: string) {
+    if (!id) {
+      return null;
+    }
+
     return this.userRepository.findOneBy({ id }); // returns single result matching criteria
   }
 

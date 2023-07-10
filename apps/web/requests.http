@@ -12,6 +12,9 @@ GET http://localhost:8080/v1/user
 ###
 GET http://localhost:8080/v1/auth/me
 
+###
+GET http://localhost:8080/v1/auth/signout
+
 
 ### GET Messages
 GET http://localhost:8080/v1/messages
