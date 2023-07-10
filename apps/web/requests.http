@@ -31,6 +31,15 @@ Content-Type: application/json
   "password": "12345678"
 }
 
+### Sign In
+POST http://localhost:8080/v1/auth/signin
+Content-Type: application/json
+
+{
+  "email": "revanello@gmail.com",
+  "password": "12345678"
+}
+
 ### DELETE user by id
 DELETE http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
 

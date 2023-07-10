@@ -32,6 +32,13 @@ export class UserController {
     return this.authService.signup(email, password);
   }
 
+  @Post('/signin')
+  signin(@Body() body: CreateUserDto) {
+    const { email, password } = body;
+
+    return this.authService.signin(email, password);
+  }
+
   @Patch('/:id')
   updateUser(@Param('id') id: string, @Body() body: UpdateUserDto) {
     const { email, password } = body;
