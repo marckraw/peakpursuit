@@ -27,7 +27,7 @@ POST http://localhost:8080/v1/auth/signup
 Content-Type: application/json
 
 {
-  "email": "marckraw@icloud.com",
+  "email": "revanello@gmail.com",
   "password": "12345678"
 }
 
