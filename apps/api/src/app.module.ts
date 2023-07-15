@@ -1,5 +1,5 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UtilPublicModule } from './util-public/util-public.module';
@@ -17,7 +17,9 @@ import { UserModule } from './user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env.development', '.env.production'],
+      envFilePath: `.env${
+        process.env.NODE_ENV ? `.${process.env.NODE_ENV}` : ''
+      }`,
       isGlobal: true,
     }), // helps with getting envs into the project, also have ConfigService Globally available
     // TypeOrmModule.forRoot({
@@ -30,11 +32,22 @@ import { UserModule } from './user/user.module';
     //   synchronize: true,
     //   autoLoadEntities: true,
     // }),
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'db-2.sqlite',
-      entities: [User, Report],
-      synchronize: true,
+    // TypeOrmModule.forRoot({
+    //   type: 'sqlite',
+    //   database: 'db-2.sqlite',
+    //   entities: [User, Report],
+    //   synchronize: true,
+    // }),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        return {
+          type: 'sqlite',
+          database: configService.get<string>('DB_NAME'),
+          synchronize: true,
+          entities: [User, Report],
+        };
+      },
     }),
     UtilPublicModule,
     PictureModule,
