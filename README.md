@@ -8,6 +8,9 @@ Some more data and start of development could be find here: https://github.com/m
 
 This is the old repo of the project named travel-jouranl.
 
+# Resources
+- course on nestjs: https://www.udemy.com/course/nestjs-the-complete-developers-guide/
+
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
