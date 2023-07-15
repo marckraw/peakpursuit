@@ -9,6 +9,7 @@ import {
   Delete,
   NotFoundException,
   Session,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -39,7 +40,15 @@ export class UserController {
 
   @Get('/me')
   async me(@Session() session: any) {
-    return this.userService.findOne(session.userId);
+    console.log('What is that: ');
+    console.log(session.userId);
+    const user = this.userService.findOne(session.userId);
+
+    if (!user) {
+      throw new UnauthorizedException('No user found');
+    }
+
+    return user;
   }
 
   @Get('/signout')
