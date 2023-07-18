@@ -1,35 +1,10 @@
-###
-GET https://localhost:3000/api/db/migration
-
-
-###
-GET https://localhost:3000/api/db/seed
-
-### GET Messages
-GET http://localhost:8080/v1/messages
-
-### GET set Color
-GET http://localhost:8080/v1/auth/colors/orange
-
-### GET get Color
-GET http://localhost:8080/v1/auth/colors
-
-
-### Create a new message
-POST http://localhost:8080/v1/messages
-Content-Type: application/json
-
-{
-  "content": "Hello world!"
-}
-
 ### Sign up
 POST http://localhost:8080/v1/auth/signup
 Content-Type: application/json
 
 {
-  "email": "revanello@gmail.com",
-  "password": "12345678"
+  "email": "marckraw@icloud.com",
+  "password": "123456789"
 }
 
 ### Sign In
@@ -37,8 +12,8 @@ POST http://localhost:8080/v1/auth/signin
 Content-Type: application/json
 
 {
-  "email": "revanello@gmail.com",
-  "password": "12345678"
+  "email": "marckraw@icloud.com",
+  "password": "123456789"
 }
 
 ### Sign Out
@@ -48,7 +23,7 @@ GET http://localhost:8080/v1/auth/signout
 GET http://localhost:8080/v1/auth/me
 
 ### DELETE user by id
-DELETE http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
+DELETE http://localhost:8080/v1/auth/fe7f0896-cf5e-489c-99e7-09dcc3bd07b4
 
 ### PATCH user by id
 PATCH http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
@@ -63,7 +38,3 @@ GET http://localhost:8080/v1/auth/22a5471c-b870-4d29-bc16-cdfc2eab1a1c
 
 ### GET find all users with email
 GET http://localhost:8080/v1/auth?email=marckraw@icloud.com
-
-
-### GET specific message
-GET http://localhost:8080/v1/messages/651

@@ -32,23 +32,39 @@ import { UserModule } from './user/user.module';
     //   synchronize: true,
     //   autoLoadEntities: true,
     // }),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        return {
+          type: 'postgres',
+          host: configService.get<string>('POSTGRES_HOST'),
+          port: Number(configService.get<string>('POSTGRES_PORT')),
+          username: configService.get<string>('POSTGRES_USER'),
+          password: configService.get<string>('POSTGRES_PASSWORD'),
+          database: configService.get<string>('POSTGRES_DB'),
+          synchronize: true,
+          autoLoadEntities: true,
+          entities: [User, Report],
+        };
+      },
+    }),
     // TypeOrmModule.forRoot({
     //   type: 'sqlite',
     //   database: 'db-2.sqlite',
     //   entities: [User, Report],
     //   synchronize: true,
     // }),
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => {
-        return {
-          type: 'sqlite',
-          database: configService.get<string>('DB_NAME'),
-          synchronize: true,
-          entities: [User, Report],
-        };
-      },
-    }),
+    // TypeOrmModule.forRootAsync({
+    //   inject: [ConfigService],
+    //   useFactory: (configService: ConfigService) => {
+    //     return {
+    //       type: 'sqlite',
+    //       database: configService.get<string>('DB_NAME'),
+    //       synchronize: true,
+    //       entities: [User, Report],
+    //     };
+    //   },
+    // }),
     UtilPublicModule,
     PictureModule,
     TagModule,

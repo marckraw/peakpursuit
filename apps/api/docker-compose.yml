@@ -5,8 +5,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: marckraw
+      POSTGRES_PASSWORD: marckraw
       POSTGRES_DB: peakpursuit
     networks:
       - peakpursuit
