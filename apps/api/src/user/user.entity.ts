@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity()
+@Entity('usr') // Just because 'user' is a reserved word in Postgres
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
